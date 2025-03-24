@@ -1,0 +1,79 @@
+def grades(tg):
+    if tg >= 97 and tg <= 100:
+        eq = 100.00
+    elif tg >= 94 and tg <= 96:
+        eq = 1.25
+    elif tg >= 91 and tg <= 93:
+        eq = 1.5
+    elif tg >= 88 and tg <= 90:
+        eq = 1.75
+    elif tg >= 85 and tg <= 87:
+        eq = 2.0
+    elif tg >= 82 and tg <= 84:
+        eq = 2.25
+    elif tg >= 79 and tg <= 81:
+        eq = 2.50
+    elif tg >= 76 and tg <= 78:
+        eq = 2.75
+    elif tg == 75:
+        eq = 3.0
+    elif tg == 74:
+        eq = 3.25
+    elif tg >= 72 and tg <= 73:
+        eq = 3.5
+    elif tg >= 70 and tg <= 71:
+        eq = 3.75
+    elif tg >= 65 and tg <= 69:
+        eq = 4.0
+    elif tg >= 60 and tg <= 64:
+        eq = 4.25
+    elif tg >= 58 and tg <= 59:
+        eq = 4.5
+    elif tg >= 50 and tg <= 57:
+        eq = 5.0
+
+    return eq
+    
+choice = "Y"
+
+while choice == "Y":
+    total = 0
+    print("Quiz 1")
+    
+    score1 = int(input("Score:"))
+    no_items1 = int(input("No of items::"))
+    print()
+    
+    print("Quiz 2")
+    
+    score2 = int(input("Score:"))
+    no_items2 = int(input("No of items::"))
+    print()
+
+    tg = ((score1 + score2 * 50 / no_items1 + no_items2 + 50) /2)
+
+    ave = grades(tg)
+    
+    print(f"QUIZ AVERAGE: {ave:.2f}")
+
+    percent = (ave * 0.35)
+    print(f"35% = {percent}")
+
+
+    print()
+    
+    choice = input("CONTINUE[Y/N]:")[0].upper()
+    if choice == "Y":
+        print()
+        continue
+        
+    elif choice == "N":
+        print
+        break
+        
+    while choice != "Y" and choice != "N":
+        print("INVALID INPUT\n")
+        choice = input("CONTINUE [Y/N]?:")[0].upper()
+        print()
+
+    
